@@ -1,0 +1,1053 @@
+{
+  "source_file": "out/rog_disasm.asm",
+  "naming_style": "snake_case",
+  "notes": [
+    "Propositions LLM non appliquees a l'ASM.",
+    "Les labels de confiance low servent surtout de pistes de renomage et demandent une validation complementaire."
+  ],
+  "proposals": [
+    {
+      "label": "sub_1000",
+      "address": "$1000",
+      "group": "music",
+      "proposed_name": "sid_init",
+      "confidence": "high"
+    },
+    {
+      "label": "sub_1003",
+      "address": "$1003",
+      "group": "music",
+      "proposed_name": "sid_play",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_1022",
+      "address": "$1022",
+      "group": "music",
+      "proposed_name": "sid_play_frame",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_1053",
+      "address": "$1053",
+      "group": "music",
+      "proposed_name": "sid_setup_v2",
+      "confidence": "medium"
+    },
+    {
+      "label": "entry_1084",
+      "address": "$1084",
+      "group": "music",
+      "proposed_name": "sid_setup_v3_master",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_10c6",
+      "address": "$10c6",
+      "group": "music",
+      "proposed_name": "sid_store_cutoff_candidate",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_10d1",
+      "address": "$10d1",
+      "group": "music",
+      "proposed_name": "sid_use_default_cutoff",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_10d4",
+      "address": "$10d4",
+      "group": "music",
+      "proposed_name": "sid_write_cutoff_hi",
+      "confidence": "medium"
+    },
+    {
+      "label": "entry_1112",
+      "address": "$1112",
+      "group": "music",
+      "proposed_name": "sid_resolve_v1_sequence",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_1119",
+      "address": "$1119",
+      "group": "music",
+      "proposed_name": "sid_cache_v1_pattern_ptrs",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_1147",
+      "address": "$1147",
+      "group": "music",
+      "proposed_name": "sid_step_v1_pattern",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_117f",
+      "address": "$117f",
+      "group": "music",
+      "proposed_name": "sid_load_v1_fx_triplet",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_11b4",
+      "address": "$11b4",
+      "group": "music",
+      "proposed_name": "sid_commit_v1_step",
+      "confidence": "low"
+    },
+    {
+      "label": "entry_11cf",
+      "address": "$11cf",
+      "group": "music",
+      "proposed_name": "sid_step_v2_pattern",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_1207",
+      "address": "$1207",
+      "group": "music",
+      "proposed_name": "sid_load_v2_fx_triplet",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_123c",
+      "address": "$123c",
+      "group": "music",
+      "proposed_name": "sid_commit_v2_step",
+      "confidence": "low"
+    },
+    {
+      "label": "entry_1257",
+      "address": "$1257",
+      "group": "music",
+      "proposed_name": "sid_step_v3_pattern",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_128f",
+      "address": "$128f",
+      "group": "music",
+      "proposed_name": "sid_load_v3_fx_triplet",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_12c4",
+      "address": "$12c4",
+      "group": "music",
+      "proposed_name": "sid_commit_v3_step",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_12df",
+      "address": "$12df",
+      "group": "music",
+      "proposed_name": "sid_tick_macro0",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_12ee",
+      "address": "$12ee",
+      "group": "music",
+      "proposed_name": "sid_reload_macro0",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_12fc",
+      "address": "$12fc",
+      "group": "music",
+      "proposed_name": "sid_apply_macro0_step",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_1310",
+      "address": "$1310",
+      "group": "music",
+      "proposed_name": "sid_tick_macro1",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_131f",
+      "address": "$131f",
+      "group": "music",
+      "proposed_name": "sid_reload_macro1",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_132d",
+      "address": "$132d",
+      "group": "music",
+      "proposed_name": "sid_apply_macro1_step",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_1341",
+      "address": "$1341",
+      "group": "music",
+      "proposed_name": "sid_tick_macro2",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_1350",
+      "address": "$1350",
+      "group": "music",
+      "proposed_name": "sid_reload_macro2",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_135e",
+      "address": "$135e",
+      "group": "music",
+      "proposed_name": "sid_apply_macro2_step",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_1372",
+      "address": "$1372",
+      "group": "music",
+      "proposed_name": "sid_tick_chan0_macro",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_1381",
+      "address": "$1381",
+      "group": "music",
+      "proposed_name": "sid_reload_chan0_macro",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_138f",
+      "address": "$138f",
+      "group": "music",
+      "proposed_name": "sid_apply_chan0_macro_step",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_13a3",
+      "address": "$13a3",
+      "group": "music",
+      "proposed_name": "sid_tick_chan1_macro",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_13b2",
+      "address": "$13b2",
+      "group": "music",
+      "proposed_name": "sid_reload_chan1_macro",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_13c0",
+      "address": "$13c0",
+      "group": "music",
+      "proposed_name": "sid_apply_chan1_macro_step",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_13d4",
+      "address": "$13d4",
+      "group": "music",
+      "proposed_name": "sid_tick_chan2_macro",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_13e3",
+      "address": "$13e3",
+      "group": "music",
+      "proposed_name": "sid_reload_chan2_macro",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_13f1",
+      "address": "$13f1",
+      "group": "music",
+      "proposed_name": "sid_apply_chan2_macro_step",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_1405",
+      "address": "$1405",
+      "group": "music",
+      "proposed_name": "sid_update_voice_loop",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_1427",
+      "address": "$1427",
+      "group": "music",
+      "proposed_name": "sid_apply_pitch_delta_up",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_143a",
+      "address": "$143a",
+      "group": "music",
+      "proposed_name": "sid_commit_pitch",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_1453",
+      "address": "$1453",
+      "group": "music",
+      "proposed_name": "sid_use_base_pitch",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_1469",
+      "address": "$1469",
+      "group": "music",
+      "proposed_name": "sid_prepare_pitch_slide",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_1495",
+      "address": "$1495",
+      "group": "music",
+      "proposed_name": "sid_update_pulse_mod",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_14b4",
+      "address": "$14b4",
+      "group": "music",
+      "proposed_name": "sid_wrap_pulse_mod_hi",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_14c2",
+      "address": "$14c2",
+      "group": "music",
+      "proposed_name": "sid_wrap_pulse_mod_lo",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_14d0",
+      "address": "$14d0",
+      "group": "music",
+      "proposed_name": "sid_step_pulse_mod",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_14e3",
+      "address": "$14e3",
+      "group": "music",
+      "proposed_name": "sid_next_voice",
+      "confidence": "high"
+    },
+    {
+      "label": "sub_14ee",
+      "address": "$14ee",
+      "group": "music",
+      "proposed_name": "sid_detect_model_and_patch_cutoff",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_14f2",
+      "address": "$14f2",
+      "group": "music",
+      "proposed_name": "sid_wait_raster_fc",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_1516",
+      "address": "$1516",
+      "group": "music",
+      "proposed_name": "sid_patch_alt_model",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_151d",
+      "address": "$151d",
+      "group": "music",
+      "proposed_name": "sid_store_cutoff_patch",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_1522",
+      "address": "$1522",
+      "group": "music",
+      "proposed_name": "sid_reset_state",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_1529",
+      "address": "$1529",
+      "group": "music",
+      "proposed_name": "sid_clear_regs_loop",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_1549",
+      "address": "$1549",
+      "group": "music",
+      "proposed_name": "sid_clear_voice_state_loop",
+      "confidence": "high"
+    },
+    {
+      "label": "sub_16b0",
+      "address": "$16b0",
+      "group": "music",
+      "proposed_name": "sid_load_step",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_16e1",
+      "address": "$16e1",
+      "group": "music",
+      "proposed_name": "sid_load_step_shape",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_16f5",
+      "address": "$16f5",
+      "group": "music",
+      "proposed_name": "sid_load_step_pitch_mode",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_1701",
+      "address": "$1701",
+      "group": "music",
+      "proposed_name": "sid_load_step_mod",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_1712",
+      "address": "$1712",
+      "group": "music",
+      "proposed_name": "sid_load_step_post",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_1722",
+      "address": "$1722",
+      "group": "music",
+      "proposed_name": "sid_apply_step_post",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_1783",
+      "address": "$1783",
+      "group": "music",
+      "proposed_name": "sid_setup_cutoff_sweep_a",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_1796",
+      "address": "$1796",
+      "group": "music",
+      "proposed_name": "sid_setup_cutoff_sweep_b",
+      "confidence": "low"
+    },
+    {
+      "label": "entry_2f00",
+      "address": "$2f00",
+      "group": "demo",
+      "proposed_name": "demo_entry",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_2f0f",
+      "address": "$2f0f",
+      "group": "demo",
+      "proposed_name": "demo_idle_loop",
+      "confidence": "high"
+    },
+    {
+      "label": "sub_2f12",
+      "address": "$2f12",
+      "group": "scroll",
+      "proposed_name": "scroll_tick_and_maybe_decode_chunk",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_2f1d",
+      "address": "$2f1d",
+      "group": "scroll",
+      "proposed_name": "scroll_decode_chunk_start",
+      "confidence": "high"
+    },
+    {
+      "label": "entry_2f21",
+      "address": "$2f21",
+      "group": "scroll",
+      "proposed_name": "scroll_decode_glyph_loop",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_2f51",
+      "address": "$2f51",
+      "group": "scroll",
+      "proposed_name": "scroll_pad_chunk_with_spaces",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_2f53",
+      "address": "$2f53",
+      "group": "scroll",
+      "proposed_name": "scroll_pad_chunk_loop",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_2f63",
+      "address": "$2f63",
+      "group": "scroll",
+      "proposed_name": "scroll_commit_chunk_and_advance_text",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_2f81",
+      "address": "$2f81",
+      "group": "scroll",
+      "proposed_name": "scroll_emit_narrow_glyph",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_2f92",
+      "address": "$2f92",
+      "group": "scroll",
+      "proposed_name": "scroll_emit_space_glyph",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_2f9f",
+      "address": "$2f9f",
+      "group": "scroll",
+      "proposed_name": "scroll_emit_fullwidth_marker",
+      "confidence": "medium"
+    },
+    {
+      "label": "sub_2fb9",
+      "address": "$2fb9",
+      "group": "scroll",
+      "proposed_name": "scroll_reset_text_pointer",
+      "confidence": "high"
+    },
+    {
+      "label": "entry_4b94",
+      "address": "$4b94",
+      "group": "title",
+      "proposed_name": "setup_title_charset_scene",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_4b96",
+      "address": "$4b96",
+      "group": "title",
+      "proposed_name": "copy_title_color_ram_loop",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_4bb1",
+      "address": "$4bb1",
+      "group": "title",
+      "proposed_name": "copy_title_screen_ram_loop",
+      "confidence": "high"
+    },
+    {
+      "label": "entry_4c12",
+      "address": "$4c12",
+      "group": "title",
+      "proposed_name": "title_irq_handler",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_4c23",
+      "address": "$4c23",
+      "group": "title",
+      "proposed_name": "title_update_sprite_anchor_positions",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_4c3b",
+      "address": "$4c3b",
+      "group": "title",
+      "proposed_name": "title_store_left_sprite_x",
+      "confidence": "medium"
+    },
+    {
+      "label": "entry_4c43",
+      "address": "$4c43",
+      "group": "title",
+      "proposed_name": "title_store_right_sprite_x",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_4c59",
+      "address": "$4c59",
+      "group": "title",
+      "proposed_name": "title_use_default_sprite_positions",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_4c6b",
+      "address": "$4c6b",
+      "group": "title",
+      "proposed_name": "title_advance_left_blob_phase",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4c86",
+      "address": "$4c86",
+      "group": "title",
+      "proposed_name": "title_choose_left_blob_shift_direction",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4c93",
+      "address": "$4c93",
+      "group": "title",
+      "proposed_name": "title_shift_blob_left_pair_0",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4cb3",
+      "address": "$4cb3",
+      "group": "title",
+      "proposed_name": "title_shift_blob_left_pair_1",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4cd3",
+      "address": "$4cd3",
+      "group": "title",
+      "proposed_name": "title_shift_blob_left_pair_2",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4cf3",
+      "address": "$4cf3",
+      "group": "title",
+      "proposed_name": "title_shift_blob_left_pair_3",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4d13",
+      "address": "$4d13",
+      "group": "title",
+      "proposed_name": "title_shift_blob_left_pair_4",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4d33",
+      "address": "$4d33",
+      "group": "title",
+      "proposed_name": "title_shift_blob_left_pair_5",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4d53",
+      "address": "$4d53",
+      "group": "title",
+      "proposed_name": "title_shift_blob_left_pair_6",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4d73",
+      "address": "$4d73",
+      "group": "title",
+      "proposed_name": "title_shift_blob_left_pair_7",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4d96",
+      "address": "$4d96",
+      "group": "title",
+      "proposed_name": "title_shift_blob_right_pair_0",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4db6",
+      "address": "$4db6",
+      "group": "title",
+      "proposed_name": "title_shift_blob_right_pair_1",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4dd6",
+      "address": "$4dd6",
+      "group": "title",
+      "proposed_name": "title_shift_blob_right_pair_2",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4df6",
+      "address": "$4df6",
+      "group": "title",
+      "proposed_name": "title_shift_blob_right_pair_3",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4e16",
+      "address": "$4e16",
+      "group": "title",
+      "proposed_name": "title_shift_blob_right_pair_4",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4e36",
+      "address": "$4e36",
+      "group": "title",
+      "proposed_name": "title_shift_blob_right_pair_5",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4e56",
+      "address": "$4e56",
+      "group": "title",
+      "proposed_name": "title_shift_blob_right_pair_6",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4e76",
+      "address": "$4e76",
+      "group": "title",
+      "proposed_name": "title_shift_blob_right_pair_7",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4e96",
+      "address": "$4e96",
+      "group": "title",
+      "proposed_name": "title_advance_right_blob_phase",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4ebb",
+      "address": "$4ebb",
+      "group": "title",
+      "proposed_name": "title_rotate_blob_buffer_backward",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4ebe",
+      "address": "$4ebe",
+      "group": "title",
+      "proposed_name": "title_rotate_blob_buffer_forward",
+      "confidence": "low"
+    },
+    {
+      "label": "loc_4f81",
+      "address": "$4f81",
+      "group": "title",
+      "proposed_name": "title_rotate_blob_buffer_backward_entry",
+      "confidence": "low"
+    },
+    {
+      "label": "entry_5020",
+      "address": "$5020",
+      "group": "title",
+      "proposed_name": "title_sprite_multiplex_irq",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_5041",
+      "address": "$5041",
+      "group": "title",
+      "proposed_name": "title_raster_tick",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_5063",
+      "address": "$5063",
+      "group": "title",
+      "proposed_name": "title_update_scroll_gradient_and_logo_sprites",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_5068",
+      "address": "$5068",
+      "group": "title",
+      "proposed_name": "title_gradient_fill_loop",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_5076",
+      "address": "$5076",
+      "group": "title",
+      "proposed_name": "title_clamp_gradient_index_high",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_507c",
+      "address": "$507c",
+      "group": "title",
+      "proposed_name": "title_lookup_gradient_color",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_5080",
+      "address": "$5080",
+      "group": "title",
+      "proposed_name": "title_store_gradient_color_pair",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_509a",
+      "address": "$509a",
+      "group": "title",
+      "proposed_name": "title_setup_top_logo_sprites",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_50e2",
+      "address": "$50e2",
+      "group": "title",
+      "proposed_name": "title_wait_raster_54",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_5170",
+      "address": "$5170",
+      "group": "title",
+      "proposed_name": "title_wait_raster_74",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_51b3",
+      "address": "$51b3",
+      "group": "title",
+      "proposed_name": "title_wait_raster_a3",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_520a",
+      "address": "$520a",
+      "group": "title",
+      "proposed_name": "title_wait_raster_a5",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_5239",
+      "address": "$5239",
+      "group": "title",
+      "proposed_name": "title_wait_raster_fc_and_exit",
+      "confidence": "high"
+    },
+    {
+      "label": "sub_52c3",
+      "address": "$52c3",
+      "group": "scroll",
+      "proposed_name": "install_scroll_irq",
+      "confidence": "high"
+    },
+    {
+      "label": "entry_52e9",
+      "address": "$52e9",
+      "group": "scroll",
+      "proposed_name": "scroll_irq_handler",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_52f8",
+      "address": "$52f8",
+      "group": "scroll",
+      "proposed_name": "scroll_wait_raster_fd",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_5301",
+      "address": "$5301",
+      "group": "scroll",
+      "proposed_name": "scroll_shift_screen_up_loop",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_5397",
+      "address": "$5397",
+      "group": "scroll",
+      "proposed_name": "scroll_shift_screen_up_next_column",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_539a",
+      "address": "$539a",
+      "group": "scroll",
+      "proposed_name": "scroll_clear_bottom_row",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_539e",
+      "address": "$539e",
+      "group": "scroll",
+      "proposed_name": "scroll_clear_bottom_row_loop",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_53a4",
+      "address": "$53a4",
+      "group": "scroll",
+      "proposed_name": "scroll_phase_controller",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_53ae",
+      "address": "$53ae",
+      "group": "scroll",
+      "proposed_name": "scroll_check_fade_threshold",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_53b5",
+      "address": "$53b5",
+      "group": "scroll",
+      "proposed_name": "scroll_timer_only_irq",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_53b8",
+      "address": "$53b8",
+      "group": "scroll",
+      "proposed_name": "scroll_wait_frame_start",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_53bd",
+      "address": "$53bd",
+      "group": "scroll",
+      "proposed_name": "scroll_wait_frame_visible",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_53ce",
+      "address": "$53ce",
+      "group": "scroll",
+      "proposed_name": "scroll_apply_fade_color_to_color_ram",
+      "confidence": "high"
+    },
+    {
+      "label": "entry_5449",
+      "address": "$5449",
+      "group": "scroll",
+      "proposed_name": "scroll_fill_color_ram_with_fade_color",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_5f90",
+      "address": "$5f90",
+      "group": "final_bitmap",
+      "proposed_name": "irq_increment_scene_timer_and_return",
+      "confidence": "high"
+    },
+    {
+      "label": "entry_5fa4",
+      "address": "$5fa4",
+      "group": "final_bitmap",
+      "proposed_name": "setup_final_bitmap_scene",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_5fce",
+      "address": "$5fce",
+      "group": "final_bitmap",
+      "proposed_name": "copy_final_bitmap_color_ram_loop",
+      "confidence": "high"
+    },
+    {
+      "label": "entry_6014",
+      "address": "$6014",
+      "group": "final_bitmap",
+      "proposed_name": "final_bitmap_irq_handler",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_6017",
+      "address": "$6017",
+      "group": "final_bitmap",
+      "proposed_name": "final_wait_frame_start",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_601c",
+      "address": "$601c",
+      "group": "final_bitmap",
+      "proposed_name": "final_wait_frame_visible",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_602b",
+      "address": "$602b",
+      "group": "final_bitmap",
+      "proposed_name": "final_check_dissolve_phase",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_6035",
+      "address": "$6035",
+      "group": "final_bitmap",
+      "proposed_name": "final_run_bitmap_dissolve_step",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_603a",
+      "address": "$603a",
+      "group": "final_bitmap",
+      "proposed_name": "final_bitmap_dissolve_loop",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_6100",
+      "address": "$6100",
+      "group": "final_bitmap",
+      "proposed_name": "final_bitmap_dissolve_next_page",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_6103",
+      "address": "$6103",
+      "group": "final_bitmap",
+      "proposed_name": "final_enter_palette_fade_logic",
+      "confidence": "medium"
+    },
+    {
+      "label": "entry_6106",
+      "address": "$6106",
+      "group": "final_bitmap",
+      "proposed_name": "final_palette_fade_tick",
+      "confidence": "medium"
+    },
+    {
+      "label": "entry_6110",
+      "address": "$6110",
+      "group": "final_bitmap",
+      "proposed_name": "final_write_border_and_bg_color",
+      "confidence": "medium"
+    },
+    {
+      "label": "loc_6129",
+      "address": "$6129",
+      "group": "final_bitmap",
+      "proposed_name": "final_irq_return",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_614b",
+      "address": "$614b",
+      "group": "final_bitmap",
+      "proposed_name": "final_shutdown_to_black",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_6158",
+      "address": "$6158",
+      "group": "final_bitmap",
+      "proposed_name": "final_idle_loop",
+      "confidence": "high"
+    },
+    {
+      "label": "sub_615b",
+      "address": "$615b",
+      "group": "input",
+      "proposed_name": "check_end_key_transition",
+      "confidence": "high"
+    },
+    {
+      "label": "loc_6166",
+      "address": "$6166",
+      "group": "input",
+      "proposed_name": "store_last_key_matrix_state",
+      "confidence": "medium"
+    }
+  ]
+}
