@@ -1,0 +1,21 @@
+[
+  {
+    "name": "rog_funkenstort_title",
+    "type": "charset_screen",
+    "screen_png": "out/visuals/rog_funkenstort_title_screen.png",
+    "charset_png": "out/visuals/rog_funkenstort_title_charset.png",
+    "charset_addr": "$3800",
+    "screen_addr": "$4000",
+    "color_addr": "$43e8",
+    "background": 0,
+    "note": "Title charset screen with cat-pattern background; this phase is not a true bitmap."
+  },
+  {
+    "name": "rog_funkenstort_title_sprites",
+    "type": "sprite_sheet",
+    "png": "out/visuals/rog_funkenstort_title_sprites.png",
+    "pointer_start": "$c1",
+    "pointer_end": "$d3",
+    "note": "Sprite shapes used by the title/raster scene around entry_5020."
+  }
+]

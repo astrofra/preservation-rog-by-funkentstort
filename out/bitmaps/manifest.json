@@ -1,0 +1,13 @@
+[
+  {
+    "name": "rog_final_bitmap",
+    "source_prg": "demo/Rog by Funkentst\u00f6rt.prg",
+    "png": "out/bitmaps/rog_final_bitmap.png",
+    "mode": "multicolor",
+    "bitmap_addr": "$a000",
+    "screen_addr": "$8000",
+    "color_addr": "$616d",
+    "background": 1,
+    "note": "Final multicolor bitmap phase prepared by entry_5fa4."
+  }
+]
