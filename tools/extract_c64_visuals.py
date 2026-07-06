@@ -51,6 +51,16 @@ class SpritePreset:
     note: str
 
 
+@dataclass(frozen=True)
+class ScrollFontPreset:
+    name: str
+    prg_pattern: str
+    charset_addr: int
+    glyph_order: str
+    narrow_glyphs: str
+    note: str
+
+
 CHARSET_PRESETS = [
     CharsetPreset(
         name="rog_funkenstort_title",
@@ -73,10 +83,21 @@ SPRITE_PRESETS = [
     ),
 ]
 
+SCROLL_FONT_PRESETS = [
+    ScrollFontPreset(
+        name="rog_scroll_font",
+        prg_pattern=r"rog by funkentstört\.prg$",
+        charset_addr=0x3800,
+        glyph_order="ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        narrow_glyphs="IL",
+        note="Scrolltext font rebuilt from the title-scene charset as 16x16 glyphs.",
+    ),
+]
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Extract C64 charset and sprite visuals as study PNGs."
+        description="Extract C64 charset, sprite, and scroll-font visuals as study PNGs."
     )
     parser.add_argument("prg", type=Path, help="Input .prg file")
     parser.add_argument(
@@ -120,6 +141,11 @@ def matching_charset_presets(prg_path: Path) -> list[CharsetPreset]:
 def matching_sprite_presets(prg_path: Path) -> list[SpritePreset]:
     name = prg_path.name.lower()
     return [preset for preset in SPRITE_PRESETS if re.search(preset.prg_pattern, name, re.IGNORECASE)]
+
+
+def matching_scroll_font_presets(prg_path: Path) -> list[ScrollFontPreset]:
+    name = prg_path.name.lower()
+    return [preset for preset in SCROLL_FONT_PRESETS if re.search(preset.prg_pattern, name, re.IGNORECASE)]
 
 
 def render_charset_screen(charset: bytes, screen: bytes, color: bytes, background: int) -> Image.Image:
@@ -188,6 +214,47 @@ def render_sprite_sheet(payload: bytes, load_address: int, preset: SpritePreset)
     return image
 
 
+def render_scroll_font_glyphs(charset: bytes, preset: ScrollFontPreset) -> Image.Image:
+    scale = 2
+    cols = 6
+    rows = (len(preset.glyph_order) + cols - 1) // cols
+    cell_w = 16 * scale
+    cell_h = 16 * scale
+    label_h = 12
+    image = Image.new("RGB", (cols * cell_w, rows * (cell_h + label_h)), (20, 20, 20))
+    draw = ImageDraw.Draw(image)
+    pixels = image.load()
+
+    for idx, glyph in enumerate(preset.glyph_order):
+        code = (ord(glyph) & 0x3F) << 1
+        narrow = glyph in preset.narrow_glyphs
+        tiles = (
+            (code, 0, 0),
+            (None if narrow else code + 1, 8, 0),
+            (code + 0x36, 0, 8),
+            (None if narrow else code + 0x37, 8, 8),
+        )
+        x0 = (idx % cols) * cell_w
+        y0 = (idx // cols) * (cell_h + label_h)
+
+        for tile_code, col_off, row_off in tiles:
+            if tile_code is None:
+                continue
+            base = tile_code * 8
+            for row in range(8):
+                bits = charset[base + row]
+                for bit in range(8):
+                    if bits & (1 << (7 - bit)):
+                        for dy in range(scale):
+                            for dx in range(scale):
+                                pixels[
+                                    x0 + (col_off + bit) * scale + dx,
+                                    y0 + (row_off + row) * scale + dy,
+                                ] = (255, 255, 255)
+        draw.text((x0, y0 + cell_h), glyph, fill=(255, 224, 0))
+    return image
+
+
 def main() -> int:
     args = parse_args()
     if args.list_presets:
@@ -201,6 +268,11 @@ def main() -> int:
             print(
                 f"{preset.name}: sprite pointers=${preset.pointer_start:02x}-${preset.pointer_end:02x} "
                 f"note={preset.note}"
+            )
+        for preset in SCROLL_FONT_PRESETS:
+            print(
+                f"{preset.name}: charset=${preset.charset_addr:04x} "
+                f"glyphs={preset.glyph_order} narrow={preset.narrow_glyphs} note={preset.note}"
             )
         return 0
 
@@ -253,6 +325,24 @@ def main() -> int:
                 "png": str(sprite_path),
                 "pointer_start": f"${preset.pointer_start:02x}",
                 "pointer_end": f"${preset.pointer_end:02x}",
+                "note": preset.note,
+            }
+        )
+
+    for preset in matching_scroll_font_presets(args.prg):
+        charset = slice_memory(payload, load_address, preset.charset_addr, 2048)
+        glyph_image = render_scroll_font_glyphs(charset, preset)
+        glyph_path = output_dir / f"{preset.name}_glyphs.png"
+        glyph_image.save(glyph_path)
+        print(f"Wrote {glyph_path}")
+        manifest.append(
+            {
+                "name": preset.name,
+                "type": "scroll_font",
+                "glyph_png": str(glyph_path),
+                "charset_addr": f"${preset.charset_addr:04x}",
+                "glyph_order": preset.glyph_order,
+                "narrow_glyphs": preset.narrow_glyphs,
                 "note": preset.note,
             }
         )

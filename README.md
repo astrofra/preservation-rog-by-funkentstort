@@ -34,7 +34,7 @@ python3 tools/extract_c64_bitmaps.py \
   --report-json out/bitmaps/manifest.json
 ```
 
-Extract the non-bitmap title scene assets as study PNGs. This phase uses a charset screen plus multiplexed sprites rather than a true bitmap:
+Extract the non-bitmap title scene assets as study PNGs. This phase uses a charset screen plus multiplexed sprites rather than a true bitmap, and the same command also exports the scrolltext font sheet:
 
 ```bash
 python3 tools/extract_c64_visuals.py \
@@ -42,4 +42,24 @@ python3 tools/extract_c64_visuals.py \
   --all-known \
   -o out/visuals \
   --report-json out/visuals/manifest.json
+```
+
+Extract the music as SID. The full rip keeps the whole PRG payload, while the lean rip keeps only the proven music range:
+
+```bash
+python3 tools/extract_c64_sid.py \
+  "demo/Rog by Funkentstört.prg" \
+  -o out/rog.sid \
+  --init '$1000' \
+  --play '$1003' \
+  --clock pal
+
+python3 tools/extract_c64_sid.py \
+  "demo/Rog by Funkentstört.prg" \
+  -o out/rog_lean.sid \
+  --init '$1000' \
+  --play '$1003' \
+  --clock pal \
+  --lean-rip \
+  --smoke-test
 ```

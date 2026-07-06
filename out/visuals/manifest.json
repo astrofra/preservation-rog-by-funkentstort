@@ -17,5 +17,14 @@
     "pointer_start": "$c1",
     "pointer_end": "$d3",
     "note": "Sprite shapes used by the title/raster scene around entry_5020."
+  },
+  {
+    "name": "rog_scroll_font",
+    "type": "scroll_font",
+    "glyph_png": "out/visuals/rog_scroll_font_glyphs.png",
+    "charset_addr": "$3800",
+    "glyph_order": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "narrow_glyphs": "IL",
+    "note": "Scrolltext font rebuilt from the title-scene charset as 16x16 glyphs."
   }
 ]
